@@ -34,11 +34,16 @@ class view
 
     public function Go($page)
     {
+         extract($this->arr);
         if(!@extract(@require_once ("app/languages/".trim(explode('/',trim($_SERVER['REQUEST_URI'],'/'))[1]).".php")))
         {
             echo Error;
             exit;
         }
+        if(empty($Language) || $Language == ""){
+            $Language = "en";
+        }
+        extract(array('lang'=>$Language));
        if(!@include_once "app/views/".$page.".php")
         {
             echo Error;
