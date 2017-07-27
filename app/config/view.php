@@ -32,7 +32,7 @@ class view
         $this->arr[$key] = $value;
     }
 
-    public function Go($page)
+    public function Go($cont,$action)
     {
          extract($this->arr);
         if(!@extract(@require_once ("app/languages/".trim(explode('/',trim($_SERVER['REQUEST_URI'],'/'))[1]).".php")))
@@ -44,7 +44,7 @@ class view
             $Language = "en";
         }
         extract(array('lang'=>$Language));
-       if(!@include_once "app/views/".$page.".php")
+       if(!@include_once "app/views/".$cont."/".$action.".php")
         {
             echo Error;
             exit;
