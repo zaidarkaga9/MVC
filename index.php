@@ -1,6 +1,5 @@
 <?php
 
-
 defined('root') ? null : define('root', 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/');
 defined('Langs') ? null : define('Langs', root."app/languages/");
 defined('CSS') ? null : define('CSS', root."public/css/");
@@ -37,8 +36,6 @@ else
 }
 
 include "app/config/control.php";
-
-
 
 $control = new Control($Language,$Controller,$Action,$Parameters);
 
