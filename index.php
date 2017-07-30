@@ -21,9 +21,7 @@ if(isset($_GET['url']) && !empty($_GET['url']))
     }
     else
     {
-        include header;
         echo Error;
-        include footer;
         exit;
     }
 }
